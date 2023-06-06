@@ -15,7 +15,7 @@ func NewApplication(db ports.DBPort) *Application {
 	}
 }
 
-func (a Application) placeOrder(order domain.Order) (domain.Order, error) {
+func (a Application) PlaceOrder(order domain.Order) (domain.Order, error) {
 	err := a.db.Save(&order)
 	if err != nil {
 		return domain.Order{}, err
